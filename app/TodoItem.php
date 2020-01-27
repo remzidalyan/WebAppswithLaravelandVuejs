@@ -14,4 +14,7 @@ class TodoItem extends Model
             $this->completed_at = Carbon::now()->toDateTimeString();
         }
     }
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
