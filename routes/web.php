@@ -12,9 +12,13 @@
 */
 Auth::routes();
 
+
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::view('vuetest', 'vuetest');
 
 // Route::get('falan',function(){
 //     return "SELAM";
