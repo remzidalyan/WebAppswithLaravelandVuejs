@@ -21,6 +21,16 @@ try {
 
 window.axios = require('axios');
 
+import store from './store'
+
+axios.interceptors.request.use(config => {
+    if (store.state.token) {
+        config.headers['Authorization'] = 'Bearer' + store.state.token;
+    }
+    return config;
+
+});
+
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**
